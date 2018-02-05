@@ -1,0 +1,82 @@
+"*":
+  build:
+    overrideThemeColors: false
+  "city-lights-ui": {}
+  core:
+    disabledPackages: [
+      "archive-view"
+      "autocomplete-atom-api"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autocomplete-plus"
+      "autocomplete-snippets"
+      "autoflow"
+      "autosave"
+      "background-tips"
+      "bookmarks"
+      "command-palette"
+      "dalek"
+      "dev-live-reload"
+      "encoding-selector"
+      "fuzzy-finder"
+      "github"
+      "go-to-line"
+      "image-view"
+      "grammar-selector"
+      "incompatible-packages"
+      "keybinding-resolver"
+      "language-c"
+      "language-clojure"
+      "language-coffee-script"
+      "language-csharp"
+      "language-css"
+      "language-git"
+      "language-go"
+      "language-hyperlink"
+      "language-java"
+      "language-javascript"
+      "language-json"
+      "language-html"
+      "language-objective-c"
+      "language-mustache"
+      "language-make"
+      "language-less"
+      "language-php"
+      "language-property-list"
+      "language-ruby"
+      "language-python"
+      "language-ruby-on-rails"
+      "language-sass"
+      "language-sql"
+      "language-todo"
+      "language-toml"
+      "language-typescript"
+      "language-xml"
+      "language-yaml"
+      "line-ending-selector"
+      "link"
+      "open-on-github"
+      "package-generator"
+      "snippets"
+      "spell-check"
+      "styleguide"
+      "symbols-view"
+      "update-package-dependencies"
+      "welcome"
+      "language-perl"
+      "markdown-preview"
+      "exception-reporting"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "city-lights-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    fontFamily: "IBM Plex Mono"
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "4f8fce18-5114-4345-ad12-fca3c4024583"
+  "tree-view":
+    hideVcsIgnoredFiles: true

@@ -1,0 +1,25 @@
+#! /bin/bash
+# Companion to commit script (and equally as hacky)
+# Pulls changes from remote and prints last entry in message log (see commit script)
+# Daniel Alexander <xandernaut@gmail.com>
+# Updated February 2018
+
+git branch | head -n 1 >> out
+# creating temporary file to store current branch name, rather than using variables
+
+# grab branch name (minus asterisk)
+tr -s '[:blank:]' '[\n*]' < out |
+  while IFS= read -r word; do
+    : echo "$word" >> /dev/null
+    if [ "$word" != "*" ]
+    then
+      echo "$word" > out
+    fi
+  done
+
+BRANCH=$(cat out)
+rm out
+
+git pull giant $BRANCH
+echo "Last commit:"
+tail -n 1 messages.log

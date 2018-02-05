@@ -1,0 +1,13 @@
+#! /bin/bash
+# wordgrinder-install
+# builds and installs Wordgrinder from source
+# Daniel Alexander <xandernaut@gmail.com>
+# Updated February 2018
+
+sudo apt-get install ninja-build libncursesw5-dev liblua5.2-dev zlib1g-dev libxft-dev
+cd ~/src
+git clone https://github.com/davidgiven/wordgrinder.git
+cd wordgrinder
+make
+cp bin/wordgrinder-builtin-curses-release ~/.local/applications/wordgrinder
+

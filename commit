@@ -1,0 +1,42 @@
+#! /bin/bash
+# Hacky commit script that allows for a log for different computers
+# Daniel Alexander <xandernaut@gmail.com>
+# Updated February 2018
+
+# Get a list of Wordgrinder documents in repo, minus .wg extension
+for f in *.wg; do
+    printf '%s\n' "${f%.wg}" >> files
+done
+
+# Export Wordgrinder projects to Markdown
+# (by way of html, since Wordgrinder doesn't support direct Markdown export)
+while IFS='' read -r line || [[ -n "$line" ]]; do
+   mkdir $line
+   while IFS='' read -r file || [[ -n "$file" ]]; do
+     wordgrinder -c $line.wg:$file $line/$file.html
+     pandoc $line/$file.html -s -o $line/$file.md
+     rm $line/$file.html
+   done < .$line
+done < files
+
+# Grab current branch and strip the asterisk out for use in commit message
+git branch | head -n 1 >> out
+tr -s '[:blank:]' '[\n*]' < out |
+  while IFS= read -r word; do
+    : echo "$word" >> /dev/null
+    if [ "$word" != "*" ]
+    then
+      echo "$word" > out
+    fi
+  done
+
+BRANCH=$(cat out)
+rm out
+rm files
+
+date=$(date)
+echo "$HOSTNAME committed to $BRANCH at $date" >> messages.log
+git add *
+git commit -a
+
+exit
