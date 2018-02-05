@@ -1,5 +1,6 @@
 # README.md
 _(Updated February 2018)_
+
 Daniel Alexander <xandernaut@gmail.com>
 
 ### Overview
@@ -23,7 +24,7 @@ for my various projects. Some of the things I use on all of my computers:
 This is my basic setup script for all of my computers. It installs the
 stuff listed above, plus the Firefox tarball from Mozilla's site.
 
-Firefox gets installed to '~/.local/applications`, which is added to the PATH 
+Firefox gets installed to `~/.local/applications`, which is added to the PATH 
 variable in `~/.bashrc`. (Well, as a technicality, it's in the `firefox`
 subdirectory, which also gets added to $PATH.) It then builds Wordgrinder from
 source (using the `wordgrinder-install` script), then cleans up after itself.
