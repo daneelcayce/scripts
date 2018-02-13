@@ -34,13 +34,11 @@ apm install language-pascal busy-signal build build-fpc
 apm install city-lights-ui city-lights-syntax city-lights-icons
 
 # install IBM Plex fonts
-cd /tmp
 wget "https://github.com/IBM/type/archive/master.zip"
 unzip master.zip
 rm master.zip
-cd type-master
 mkdir -p /usr/share/fonts/truetype/ibm-plex
-cp /tmp/type-master/fonts/*/desktop/pc/*.ttf /usr/share/fonts/truetype/ibm-plex/.
+cp type-master/fonts/*/desktop/pc/*.ttf /usr/share/fonts/truetype/ibm-plex/.
 fc-cache -fv
 
 # overwrite some configuration files for Atom and Cinnamon
